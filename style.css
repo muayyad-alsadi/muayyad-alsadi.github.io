@@ -1,0 +1,96 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  padding-bottom: 40px;
+  color: #5a5a5a;
+  background:#888;
+}
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  height: 500px;
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 500px;
+  background-color: #777;
+}
+
+.carousel .item.inverse .carousel-caption {
+  color: #222;
+  text-shadow: 0 1px 2px rgba(250,250,250,.6)
+}
+
+
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  /* height: 500px; */
+}
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+}
+
+#github-follow{
+position:absolute;left:0;top:0;
+}
+
+.me-wrapper{background:#888;padding:128px 0 64px;}
+.me-container{background:#fff;padding:76px 32px 32px;position:relative;border-top-right-radius: 64px;border-top-left-radius: 16px;}
+#avatar-wrapper{position:absolute;background:#888;padding:4px;display:block;width:136px;height:136px;border-radius:68px;margin-left:-68px;left:50%;top:-68px;}
+#avatar-wrapper img {width:128px;border-radius:64px}
+.social-icon{position:absolute;background:#eee;padding:0;display:block;width:32px;height:32px;border-radius:16px;font-size:24px;vertical-align: middle;background-color: rgba(250,250,250,0.7);}
+.social-icon:hover{background-color: rgba(250,250,250,1);}
+#social-icon{right: 24px;top: 24px;overflow:visible;position:absolute}
+#twitter-icon{right: -24px;top: -24px;}
+#xchange-icon{right: 8px;top: -38px;}
+#in-icon{right: -38px;top: 8px;}
+#social-icon a{color: #ccc;}
+#twitter-icon a {color: #55acee;}
+#xchange-icon a {color: #3b5998;}
+#in-icon a {color: #007bb6;}
