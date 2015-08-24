@@ -76,6 +76,13 @@ body {
 
 }
 
+@media screen and (orientation:portrait) {
+.carousel-inner > .item > img { min-width: auto; height: 500px; }
+.carousel-caption img {width:90%;}
+.carousel-caption img.cert-ico {width:32px;}
+#github-follow{display:none}
+}
+
 #github-follow{
 position:absolute;left:0;top:0;
 }
