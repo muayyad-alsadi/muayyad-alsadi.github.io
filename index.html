@@ -158,7 +158,7 @@
             <p>A limit found in production, a fix sent upstream, and a write-up other teams can use. Patches sent by mail do not all show up as pull requests.</p>
             <ul>
               <li><b>Docker, 2015.</b> A flat switch-root design for multi-stage builds, <a href="https://github.com/moby/moby/issues/15271">moby #15271</a>, close to what shipped in 17.05.</li>
-              <li><b>NGINX, 2012.</b> Weighted <code>ip_hash</code> after the list had called it impossible. <a href="https://trac.nginx.org/nginx/ticket/144">Ticket #144</a> shipped in 1.3.1.</li>
+              <li><b>NGINX, 2012.</b> Weighted <code>ip_hash</code>. Maxim Dounin accepted the algorithm in <a href="https://trac.nginx.org/nginx/ticket/144">ticket #144</a>, shipped in 1.3.1.</li>
               <li><b>wasmtime-py, 2023.</b> Copying between Python and WebAssembly became <a href="https://github.com/bytecodealliance/wasmtime-py/pull/134">400× faster</a>.</li>
             </ul>
           </div>
@@ -266,6 +266,19 @@
           <p class="asof">As of October 2026</p>
         </div>
         <p>Runs standard Compose files (<code>docker-compose.yml</code>) on Podman, Red Hat’s daemonless, rootless container engine. Teams keep the stacks they already have and gain Podman’s security model: no root-owned daemon, containers running as unprivileged users. It now lives in the official <a href="https://github.com/containers">containers</a> organization, beside Podman, Buildah and Skopeo.</p>
+        <figure class="tweets">
+          <figcaption>Daniel Walsh introducing podman-compose in RedHat Summit 2019</figcaption>
+          <div class="pair">
+            <blockquote class="twitter-tweet" data-dnt="true" data-theme="light">
+              <p>Any help you need with podman-compose from the podman team, please ping us. I am pointing people who come looking for compose at your project.</p>
+              <a href="https://x.com/rhatdan/status/1127965798566203392">Daniel Walsh, 13 May 2019</a>
+            </blockquote>
+            <blockquote class="twitter-tweet" data-dnt="true" data-theme="light">
+              <p>How to replace #docker with #podman. @rhatdan in #Community Central at #RHSummit.</p>
+              <a href="https://x.com/JenInnovate/status/1126249520243802113">Jen Madriaga, 8 May 2019</a>
+            </blockquote>
+          </div>
+        </figure>
       </article>
       <h3>Ojuba Linux</h3>
       <p>Lead developer of the Fedora-based Arabic Linux distribution. <a href="https://github.com/ojuba-org">ojuba-org</a> on GitHub.</p>
@@ -274,7 +287,7 @@
       <ul class="upstream">
         <li><span class="marks"><img class="from-white" src="static/logos/docker.svg" alt=""></span><div><strong>Docker.</strong> Years of contributions, always in the plural. An early proposal for multi-stage builds: a flat switch-root to a sub-image (<a href="https://github.com/moby/moby/issues/15271">moby #15271</a>, August 2015), closer to the form Docker shipped in 17.05 than Solomon Hykes’ nested <code>IN { }</code> / <code>PUBLISH</code> (<a href="https://github.com/moby/moby/issues/7115">#7115</a>). The point was to stop shipping compilers and build-time dependencies. Also a clear error when a host volume path does not start with <code>/</code> (<a href="https://github.com/moby/moby/pull/27985">#27985</a>, 2016), and <code>dnf download</code> support for busybox in <a href="https://github.com/fedora-cloud/Fedora-Dockerfiles/pull/171">Fedora-Dockerfiles #171</a>.</div></li>
         <li><span class="marks"><img src="static/logos/webassembly.svg" alt=""></span><div><strong>wasmtime-py, Bytecode Alliance.</strong> Made copying data between Python and WebAssembly linear memory 400× faster, replacing per-byte access with a direct <code>memmove</code> (<a href="https://github.com/bytecodealliance/wasmtime-py/pull/134">#134</a>, merged 2023). Proposed a further 7× faster call path (<a href="https://github.com/bytecodealliance/wasmtime-py/pull/139">#139</a>, open). Written up on Medium; the same bottleneck was reported to Wasmer.</div></li>
-        <li><span class="marks"><img class="from-white" src="static/logos/nginx.svg" alt=""></span><div><strong>NGINX.</strong> Weighted <code>ip_hash</code> (2012). The docs said <code>ip_hash</code> could not be combined with <code>weight</code>. <a href="https://trac.nginx.org/nginx/ticket/144">Ticket #144</a> carried a working algorithm, and Maxim Dounin added weight support in NGINX 1.3.1. It had been called impossible on the mailing list.</div></li>
+        <li><span class="marks"><img class="from-white" src="static/logos/nginx.svg" alt=""></span><div><strong>NGINX.</strong> Weighted <code>ip_hash</code> (2012). The docs said <code>ip_hash</code> could not be combined with <code>weight</code>. <a href="https://trac.nginx.org/nginx/ticket/144">Ticket #144</a> proposed a working algorithm, and Maxim Dounin accepted it in NGINX 1.3.1.</div></li>
         <li><span class="marks"><img class="from-white" src="static/logos/fedora.svg" alt="Fedora"><img class="from-white" src="static/logos/redhat.svg" alt="Red Hat"></span><div><strong>Fedora / RHEL, Red Hat.</strong> Proposed and implemented the <a href="https://fedoraproject.org/wiki/Features/MediaRepo">MediaRepo</a> feature. Four PackageKit patches: <a href="https://github.com/hughsie/PackageKit/commit/277490d1a">277490d</a>, <a href="https://github.com/hughsie/PackageKit/commit/5d1dede4a">5d1dede</a>, <a href="https://github.com/hughsie/PackageKit/commit/9ae160e0a">9ae160e</a>, <a href="https://github.com/hughsie/PackageKit/commit/97ba7c687">97ba7c6</a>, and the <a href="http://cgit.freedesktop.org/packagekit/commit/?id=9ae160e0a">freedesktop copy</a>. Yumex. A working <a href="https://lists.fedoraproject.org/pipermail/devel/2012-March/164062.html">sysctl.d</a>. PulseAudio: stopped a denial of service caused by flooding the logs.</div></li>
         <li><span class="marks"><img class="from-white" src="static/logos/podman.svg" alt=""></span><div><strong>Podman.</strong> Tests for parallel execution and networking (<a href="https://github.com/containers/podman/pull/2570">#2570</a>) and docs pointing to third-party Compose tools (<a href="https://github.com/containers/podman/pull/2981">#2981</a>), both merged in 2019.</div></li>
         <li><span class="marks"><img class="from-white" src="static/logos/duckdb.svg" alt=""></span><div><strong>DuckDB.</strong> PostgreSQL compatibility: simulated <code>datallowconn</code> / <code>datistemplate</code> in <code>pg_catalog.pg_database</code> (<a href="https://github.com/duckdb/duckdb/pull/22302">#22302</a>, 2026).</div></li>
@@ -451,6 +464,7 @@
   <footer>
     <span>Open source since 2002 · Arabic (native), English · Amman</span>
   </footer>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   <script src="static/main.js"></script>
 </body>
 </html>

@@ -297,6 +297,30 @@ a { color: var(--link); text-underline-offset: 0.22em; }
 }
 .compose-card h3 { margin: 0; }
 .compose-card > p { max-width: 70ch; }
+.compose-card .tweets { margin: 0; }
+.compose-card .tweets figcaption {
+  margin: 0 0 0.45rem;
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.compose-card .pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+.compose-card .pair > .twitter-tweet-rendered,
+.compose-card .twitter-tweet {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+.compose-card .pair iframe { width: 100% !important; max-width: 100%; }
+@container (max-width: 40rem) {
+  .compose-card .pair { grid-template-columns: 1fr; }
+}
 .compose-card img { width: 4.25rem; height: auto; flex: none; }
 .tally-row {
   display: flex;
